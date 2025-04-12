@@ -11,6 +11,6 @@ Thank you for taking the time to review them!
 ![Image](https://github.com/user-attachments/assets/ca0fa52c-e9e4-4d58-9876-bbdb52feb847)
 
 
-Here's a meme to brighten your day •ᴗ•
+Here's a meme •ᴗ•
 
 ![Image](https://github.com/user-attachments/assets/3be95a57-4989-40f6-b41c-cb7de94f22fa)
