@@ -47,7 +47,7 @@ if choice1 == "no":
 elif choice1 == "yes":
     print("\nYou stand up and walk toward the door...")
     time.sleep(2)
-    print("You open it and walk into headspace")
+    print("You open it and walk into Headspace")
 
     time.sleep(3)
     print("\nYou enter a colorful room. Your friends are waiting for you.")
@@ -134,8 +134,10 @@ elif choice1 == "yes":
 
     if choice6 == "yes":
         print("\nEverything fades. You feel a weird weight in your chest as you open your eyes....")
+        time.sleep(10)
     elif choice6 == "no":
         print("\nYou sit quietly with your friends as the sun sets.")
+        time.sleep(10)
 
 
 
