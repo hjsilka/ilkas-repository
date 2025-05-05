@@ -1,9 +1,16 @@
 import time, sys
 
+# Omori game - Refactored Version
+# NOTE: this game was inspired by my favorite video game Omori :3"
+# Its a mini rpg with different scenes and two small guessing mini-games
+
 # global variables
 TEXT_SPEED = 0.05
 PINK = "\033[95m"
 RESET = "\033[0m"
+player_name = ""
+DEBUG = False
+
 
 # Effects
 def typingPrint(text, delay=TEXT_SPEED, color=RESET):
@@ -14,7 +21,6 @@ def typingPrint(text, delay=TEXT_SPEED, color=RESET):
         if character == "\n":
             print()
 
-# NOTE: this game was inspired by my favorite video game Omori :3"
 
 # Functions needed for the mini-games
 
@@ -81,11 +87,13 @@ def intro_scene():
     time.sleep(1)
     typingPrint("\nYou have been living here for as long as you can remember.\n")
     time.sleep(2)
+    global player_name
+    player_name = input("What is your name? ")
 
 # Whitespace
 def whitespace_scene(name):
     while True:
-        print(f"\n{name}, do you want to leave WHITE SPACE?")
+        print(f"\n{player_name}, do you want to leave WHITE SPACE?")
         choice1 = input("'yes' or 'no': ").strip().lower()
 
         if choice1 == "no":
@@ -95,7 +103,7 @@ def whitespace_scene(name):
             time.sleep(2)
             print("After awhile you begin to feel.. something")
             time.sleep(2)
-            print("\n₲₳₥Ɇ ØVɆⱤ") # Game over, the player decided to stay in white space so they dont meet their friends
+            print("\n₲₳₥Ɇ ØVɆⱤ") # Game over. This is the only way to "lose" the game.
             break
 
         elif choice1 == "yes":
@@ -143,7 +151,7 @@ def friend_scene():
             print("Invalid choice. Please enter A, B, or C.")
 
     rock_scene() # Scene after A, B or C
-    wakeup_scene()
+    wakeup_scene() # Last scene
 
 # if the player chose A = Playground
 def playground_scene():
@@ -240,7 +248,7 @@ def color_game():
 # End
 def wakeup_scene():
         time.sleep(2)
-        typingPrint("\nMari: 'Its getting late. Do you want to wake up?' ˶ᵔ ᵕ ᵔ˶", color=PINK)
+        typingPrint(f"\nMari: 'Its getting late. Do you want to wake up {player_name}?' ˶ᵔ ᵕ ᵔ˶", color=PINK)
         print()
 
         while True:
@@ -264,8 +272,7 @@ def wakeup_scene():
 # main function
 def main():
     intro_scene()
-    name = input('What is your name? ')
-    whitespace_scene(name)
+    whitespace_scene(player_name)
 
 if __name__ == "__main__":
     main()
